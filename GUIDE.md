@@ -174,16 +174,19 @@ Example: `192.168.0.0/24 or 172.16.0.0/12 or 10.0.0.0/8` depending on your speci
 ### In Tailscale Admin Console
 
 1. Click on **Unraid** and approve the subnet route.
-2. Go to **DNS → Nameservers**
-3. Enable **Override local DNS**
-4. Add the **Local static IP** you assigned to Adguard (or device running AdGuard)
+<img width="809" height="474" alt="image" src="https://github.com/user-attachments/assets/c8c3201b-0327-488d-b8c5-cfda32a4db0a" />
 
-Example: `192.168.1.3`
+2. Go to **DNS → Nameservers**
+<img width="493" height="404" alt="image" src="https://github.com/user-attachments/assets/7ca48fe7-c3d6-4da1-aa17-db86ccd80c56" />
+
+3. Enable **Override local DNS** and add the **Local static IP** you assigned to Adguard (or device running AdGuard)
+<img width="765" height="853" alt="image" src="https://github.com/user-attachments/assets/f395cb54-b40c-4989-967d-3d293240bae8" />
 
 >[!TIP]
 >
 >Alternatively you if you installed Adguard on a standalone device, you can instead set the tailscale dns override to the IP tailscale has assigned to the device.
 >
->Example: `100.64.57.2`
+><img width="696" height="86" alt="image" src="https://github.com/user-attachments/assets/f04e7974-4f30-461d-85d1-6f4060029b71" />
+
 
 All Tailscale devices now resolve DNS via AdGuard
