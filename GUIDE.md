@@ -16,10 +16,9 @@ In this guide we will:
 
 * Unraid server with Docker enabled
 * NGINX Proxy Manager **or** SWAG
-* AdGuard Home using `br0` network on Unraid **or** running on a standalone device
+* AdGuard Home using `br0` network on Unraid **or** running on a standalone device such as a raspberry pi.
 * Tailscale installed on:
-  * Unraid
-  * (Optional) Device running AdGuard Home
+  * Unraid (or device running Adguard)
   * Client devices
 * A domain hosted on a public DNS resolver (example: cloudflare)
 
@@ -82,15 +81,15 @@ radarr.example.com → 192.168.1.2:7878
 
 ## 📦 Step 3: Install and Configure AdGuard Home
 
-1. Install **AdGuard Home** (Unraid container or Standalone device)
+1. Install **AdGuard Home**
 2. Change Container Network to `br0` and assign a static IP 
-3. Expose ports:
+3. Expose ports and assign a static IP:
 
 | Port      | Purpose     |
 | --------- | ----------- |
 | 53        | DNS         |
 | 3000      | Setup UI    |
-| Static IP | 192.168.1.3 |
+| Static IP | 192.168.1.3 | <--- Example IP address
 
 > [!IMPORTANT]
 >  For Unraid to communicate with conatiners using `br0` networking, you must enable "**Host access to custom networks**" within the Unraid Docker settings.
@@ -152,16 +151,39 @@ Verify: `ping app.example.com` should return IP of NGINX/UNRAID `192.168.1.2`
 >[!IMPORTANT]
 >**AdGuard & NGINX must be on the same Tailscale network**
 
+### Install Tailscale Unraid Plugin
+
+1. Apps → Plugins → Tailscale
+2. Settings → Taiscale
+3. Add Unraid to your tailnet and authenticate device.
+4. Once Unraid shows up in your tailnet return to the Tailscale Plugin settings page
+5. At the bottom of the page where it says **Advertised Routes** add your LAN subnet/24
+
+Example: `192.168.0.0/24 or 172.16.0.0/12 or 10.0.0.0/8` depending on your specific subnet.
+
+>[!WARNING]
+>
+>Advertising the entire subnet range will allow access all of the LAN devices as if you were on your local network. Any other user who you may invite to your tailnet will have the same access.
+
+>[!TIP]
+>
+>You can instead opt to only advertise specific IP addressess such as using the IP/32 CIDR notation
+>
+>Example: `192.168.1.2/32 and 192.168.1.3/32` you will need to advertise each IP address you need accessible from tailscale.
+
 ### In Tailscale Admin Console
 
-1. Go to **DNS → Nameservers**
-2. Enable **Override local DNS**
-3. Add the **Tailscale IP assigned to Unraid** (or device running AdGuard)
+1. Click on **Unraid** and approve the subnet route.
+2. Go to **DNS → Nameservers**
+3. Enable **Override local DNS**
+4. Add the **Local static IP** you assigned to Adguard (or device running AdGuard)
 
-Example:
+Example: `192.168.1.3`
 
-```
-100.64.0.10
-```
+>[!TIP]
+>
+>Alternatively you if you installed Adguard on a standalone device, you can instead set the tailscale dns override to the IP tailscale has assigned to the device.
+>
+>Example: `100.64.57.2`
 
 All Tailscale devices now resolve DNS via AdGuard
