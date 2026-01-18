@@ -146,7 +146,7 @@ Verify: `ping app.example.com` should return IP of NGINX/UNRAID `192.168.1.2`
 
 * Install Tailscale on:
 
-  * Unraid and Adguard Device if standalone
+  * Unraid (or device running AdGuard)
   * All client devices
 
 >[!IMPORTANT]
@@ -156,7 +156,7 @@ Verify: `ping app.example.com` should return IP of NGINX/UNRAID `192.168.1.2`
 
 1. Go to **DNS → Nameservers**
 2. Enable **Override local DNS**
-3. Add the **Tailscale IP assigned to Unraid** (or AdGuard device)
+3. Add the **Tailscale IP assigned to Unraid** (or device running AdGuard)
 
 Example:
 
