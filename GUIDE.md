@@ -105,6 +105,10 @@ Add a wildcard rule:
 
 Update router or DHCP:
 
+>[!WARN]
+>You need to manually set the DNS servers unraid uses to something other than the router default or unraid may become unreachable
+>if the docker service is disabled. 
+
 * Set DNS server to AdGuard IP or manually configure on devices:
 
 >[!NOTE]
