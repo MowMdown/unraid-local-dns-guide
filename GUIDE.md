@@ -88,7 +88,7 @@ radarr.example.com → 10.0.0.2:7878
 Add a wildcard rule:
 
 1. In the top field, you will add your domain with a subdomain using an asterisk as shown below
-2. In the bottom field you will input the local IP of your unraid server which will redirect to your NGINX revser proxy
+2. In the bottom field you will input the local IP of your unraid server which will redirect to your NGINX reverse proxy
 
 <img width="505" height="555" alt="image" src="https://github.com/user-attachments/assets/55b1681c-91de-438a-b8ae-5ffbf235be4d" />
 
