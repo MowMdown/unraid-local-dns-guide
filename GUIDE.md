@@ -71,7 +71,7 @@ radarr.example.com → 10.0.0.2:7878
 ## 📦 Step 3: Install and Configure AdGuard Home
 
 1. Install **AdGuard Home**
-2. Change Container Network to `br0` and assign a static IP 
+2. Change Container Network to `br0` and assign a static IP (ensure the IP address you assign is outside of your routers DHCP range)
 <img width="650" height="559" alt="image" src="https://github.com/user-attachments/assets/4373a066-19a4-4b7b-a35b-6d071c5b343a" />
 
 > [!IMPORTANT]
