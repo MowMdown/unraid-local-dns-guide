@@ -140,7 +140,7 @@ Verify: `ping app.example.com` should return IP of NGINX/UNRAID `10.0.0.2`
 
 ### Install Tailscale Unraid Plugin
 
-1. Apps → Plugins → Tailscale
+1. ### Apps → Plugins → Tailscale
 <img width="578" height="462" alt="image" src="https://github.com/user-attachments/assets/cd5fcac5-3ffd-4a87-8230-cfdd80ccba32" />
 
 
