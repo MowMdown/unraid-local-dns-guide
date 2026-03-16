@@ -35,22 +35,21 @@ Migrate the Unraid WebGUI ports to something other than 80 and 443
 | HTTP      | 80             | 81       |
 | HTTPS     | 443            | 4430     |
 
-<img width="1110" height="781" alt="image" src="https://github.com/user-attachments/assets/38bd9cf3-d69c-4584-992b-a74f726b9dd0" />
-
-
 > [!IMPORTANT]
 >  When you migrate the ports, you will need to access unraid using the port you specified otherwise you will fail to connect.
 > 
 >  Example: `http://10.0.0.2:81` or `https://10.0.0.2:4430`
 
+<img width="1110" height="781" alt="image" src="https://github.com/user-attachments/assets/38bd9cf3-d69c-4584-992b-a74f726b9dd0" />
+
 ---
 
 ## 🔀 Step 2: Install and Configure NGINX Reverse Proxy
 
-1. Install **NGINX Proxy Manager** of **SWAG** from Community Applications
-2. Set **NGINX Proxy Manager** to `host` networking mode
+1. Install **NGINX Proxy Manager** or **SWAG** from Community Applications
+2. Set your reverse proxy application networking to `host` networking mode
 
-In **NGINX Proxy Manager**:
+Using **NGINX Proxy Manager**:
 
 ### Create a Proxy Host
 
