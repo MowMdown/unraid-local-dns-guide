@@ -109,7 +109,7 @@ Update router or DHCP:
 
 >[!WARNING]
 >You need to manually set the DNS servers unraid uses to something other than the router default or unraid may become unreachable
->if the docker service is disabled. 
+>if the docker service is disabled. Recommedned DNS to use on Unraid are, `1.1.1.1`, `8.8.8.8`, or `9.9.9.9`
 
 * Set DNS server to AdGuard IP or manually configure on devices:
 
